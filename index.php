@@ -66,8 +66,7 @@ $app->post('/', function ($request, $response)
             $message .= "1. Jakarta \n";
             $message .= "2. Bandung \n";
             $message .= "3. Yogyakarta \n";
-            $message .= "4. Malang \n";
-            $message .= "5. Bali \n"; 
+            $message .= "4. Bali \n";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
@@ -97,77 +96,63 @@ $app->post('/', function ($request, $response)
 			}
 
 			$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "bandung"){
-			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("GOA BELANDA", "Lokasi: Dago Pakar","https://i.misteraladin.com/blog/2019/11/14152903/goa-belanda-2jpg-sTvP.jpg",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://blog.misteraladin.com/jangan-berani-coba-coba-ucapkan-kata-ini-ketika-masuk-gua-belanda-di-dago/"),
-			  ]),
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("KAWAH PUTIH", "Lokasi: Sugihmukti, Pasirjambu, Bandung","https://www.kepogaul.com/wp-content/uploads/2018/06/000157-00_wisata-kawah-putih-bandung_kawah-putih_800x450_ccpdm-min.jpg",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://www.kepogaul.com/wisata/wisata-kawah-putih-bandung/"),
-			  ]),
-			  ]);
+			if(strtolower($userMessage) == "bandung"){
+				$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+				  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("GOA BELANDA", "Lokasi: Dago Pakar","https://i.misteraladin.com/blog/2019/11/14152903/goa-belanda-2jpg-sTvP.jpg",[
+				  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://blog.misteraladin.com/jangan-berani-coba-coba-ucapkan-kata-ini-ketika-masuk-gua-belanda-di-dago/"),
+				  ]),
+				  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("KAWAH PUTIH", "Lokasi: Sugihmukti, Pasirjambu, Bandung","https://www.kepogaul.com/wp-content/uploads/2018/06/000157-00_wisata-kawah-putih-bandung_kawah-putih_800x450_ccpdm-min.jpg",[
+				  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://www.kepogaul.com/wisata/wisata-kawah-putih-bandung/"),
+				  ]),
+				  ]);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('bandung',$carouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
 
 			$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "yogyakarta"){
-			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Memulai Pemrograman Dengan Kotlin", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/memulai_pemrograman_dengan_kotlin_logo_071119141033.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/80"),
-			  ]),
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Aplikasi Android untuk Pemula", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_aplikasi_android_untuk_pemula_logo_071119140631.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka',"https://www.dicoding.com/academies/51"),
-			  ]),
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Fundamental Aplikasi Android", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/menjadi_android_developer_expert_logo_071119140536.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/14"),
-			  ]),
-			  ]);
+			if(strtolower($userMessage) == "yogyakarta"){
+				$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+				  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("MALIOBORO", "Lokasi: Jl. Malioboro","https://cdn2.tstatic.net/jogja/foto/bank/images/sepanjang-jalan-malioboro.jpg",[
+				  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://jogja.tribunnews.com/2019/09/15/wisata-ke-jantung-yogyakarta-di-sepanjang-jalan-malioboro-syahdu-dan-menyenangkan"),
+				  ]),
+				  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("CANDI BOROBUDUR", "Lokasi: Magelang","https://lh3.googleusercontent.com/proxy/vEdJhBmX66zuvcRD1JvSknreRYDKcpNXT7dGf8stsEdFs_3cpzuwHO7h5pnamSr1h4tWTAGNdHEfnJJiM5vS7WAgz7uow-OSNbPfdUlCqFM4Wmx-3dQg_lmfci6XiAHCoN0TteeMQ7pn",[
+				  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"http://bob.kemenpar.go.id/1896-candi-borobudur/"),
+				  ]),
+				  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("PANTAI PARANGTRITIS", "Lokasi: Yogya","https://cdn2.tstatic.net/jogja/foto/bank/images/tempat-wisata-yang-wajib-di-kunjungi-ketika-ke-parangtritis.jpg",[
+				  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://jogja.tribunnews.com/2019/08/29/tempat-wisata-alternatif-yang-lokasinya-dekat-dengan-pantai-parangtritis"),
+				  ]),
+				  ]);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('yogyakarta',$carouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
-			
-			$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "malang"){
-			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Memulai Pemrograman Dengan Kotlin", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/memulai_pemrograman_dengan_kotlin_logo_071119141033.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/80"),
-			  ]),
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Aplikasi Android untuk Pemula", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_aplikasi_android_untuk_pemula_logo_071119140631.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka',"https://www.dicoding.com/academies/51"),
-			  ]),
-			  ]);
-			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('malang',$carouselTemplateBuilder);
-			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-			}
+
 
 			$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "bali"){
-			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Memulai Pemrograman Dengan Kotlin", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/memulai_pemrograman_dengan_kotlin_logo_071119141033.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/80"),
-			  ]),
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Aplikasi Android untuk Pemula", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_aplikasi_android_untuk_pemula_logo_071119140631.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka',"https://www.dicoding.com/academies/51"),
-			  ]),
-			  ]);
+			if(strtolower($userMessage) == "bali"){
+				$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+				  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("PANTAI KUTA BALI", "Lokasi: kuta","https://kintamaniid-a903.kxcdn.com/wp-content/uploads/Keindahan-Pantai-Kuta-Bali-yang-sanggup-menarik-ribuan-wisatawan-setiap-tahunnya.jpg",[
+				  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://www.kintamani.id/keindahan-pantai-kuta-bali-00244.html"),
+				  ]),
+				  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("KINTAMANI", "Lokasi: Kintamani","https://cdn.rentalmobilbali.net/wp-content/uploads/2018/10/Daya-Tarik-Pariwisata-Di-Kintamani.jpg",[
+				  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://www.rentalmobilbali.net/kintamani/"),
+				  ]),
+				  ]);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('bali',$carouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
 
-		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) != '' )
-		{
-			$message = "maaf anda belum memilih kota";
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-		
-		}
+			$userMessage = $event['message']['text'];
+			if(strtolower($userMessage) != '' )
+			{
+				$message = "maaf anda belum memilih kota";
+	            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+				$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+				return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			
+			}
 			
 	}
 	
