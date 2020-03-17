@@ -76,13 +76,13 @@ $app->post('/', function ($request, $response)
 
 			
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "jakarta" || "Jakarta"){
+		if(strtolower($userMessage) == "jakarta"){
 			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Memulai Pemrograman Dengan Kotlin", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/memulai_pemrograman_dengan_kotlin_logo_071119141033.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/80"),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("MONAS", "Lokasi : Jakarta Pusat","https://kbr.id/media/?size=730x406&filename=monas.jpg",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://www.dicoding.com/academies/80"),
 			  ]),
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Aplikasi Android untuk Pemula", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_aplikasi_android_untuk_pemula_logo_071119140631.png",[
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka',"https://www.dicoding.com/academies/51"),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("KOTA TUA", "Lokasi : Jakarta Barat","https://dolanyok.com/wp-content/uploads/2019/09/kota-tua-1.jpg",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Detail',"https://www.dicoding.com/academies/51"),
 			  ]),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Fundamental Aplikasi Android", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/menjadi_android_developer_expert_logo_071119140536.png",[
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/14"),
