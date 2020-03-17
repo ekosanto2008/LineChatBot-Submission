@@ -57,7 +57,7 @@ $app->post('/', function ($request, $response)
 		
 
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'ls')
+		if(strtolower($userMessage) == 'nav')
 		{
 			$message = "list kata kunci :
 			ls : menampilkan list menu perintah
