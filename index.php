@@ -48,7 +48,7 @@ $app->post('/', function ($request, $response)
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'hai')
 		{
-			$message = "Halo Halo Hai kaka";
+			$message = "Halo kamu";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
@@ -76,7 +76,7 @@ $app->post('/', function ($request, $response)
 
 			
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "jakarta"){
+		if(strtolower($userMessage) == "jakarta" || "Jakarta"){
 			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Memulai Pemrograman Dengan Kotlin", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/memulai_pemrograman_dengan_kotlin_logo_071119141033.png",[
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/80"),
