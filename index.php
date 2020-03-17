@@ -91,7 +91,7 @@ $app->post('/', function ($request, $response)
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/129"),
 			  ]),
 			  ]);
-			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path android',$carouselTemplateBuilder);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('wisata jakarta',$carouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
