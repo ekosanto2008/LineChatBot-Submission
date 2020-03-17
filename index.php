@@ -59,14 +59,15 @@ $app->post('/', function ($request, $response)
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'nav')
 		{
-			$message = "list kata kunci :
-			nav : menampilkan list menu perintah
-			pilih nama kota
-			1. jakarta
-			2. bandung
-			3. yogyakarta
-			4. malang
-			5. bali"; 
+			$message = "Navigasi \n"; 
+			$message .= "nav : menampilkan navigasi user \n"; 
+			$message .= "Silakan pilih \"KOTA\" untuk memulai perjalanan. \n";
+            $message .= "Aku akan menunjukan tempat wisata yang bagus. \n";
+            $message .= "1. Jakarta \n";
+            $message .= "2. Bandung \n";
+            $message .= "3. Yogyakarta \n";
+            $message .= "4. Malang \n";
+            $message .= "5. Bali \n"; 
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
